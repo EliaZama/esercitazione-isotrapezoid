@@ -5,7 +5,6 @@
 */
 
 #include <iostream>
-#include <cmath>
 #include "isoTrapezoid.h"
 
 /// @brief default constructor 
@@ -14,7 +13,6 @@ isoTrapezoid::isoTrapezoid() {
 	cout << "isoTrapezoid - constructor - default" << endl;
 
 	Init();
-
 }
 
 /// @brief constructor 
@@ -25,7 +23,7 @@ isoTrapezoid::isoTrapezoid(float t, float b, float h) {
 
 	Init();
 
-	cout << "Rectangle - constructor" << endl;
+	cout << "isoTrapezoidal - constructor" << endl;
 
 	if (t <= 0.)
 		cout << "WARNING: isoTrapezoid - constructor: topside should be > 0" << endl;
@@ -157,12 +155,9 @@ void isoTrapezoid::SetDim(float t, float b, float h) {
 	
 }
 
-float CalculateSide() {
-	float side;
+float isoTrapezoid::CalculateSide() {
 
-	side = sqrt((height * height) + ((topside + bottomside) / 2) * ((topside + bottomside) / 2));
-
-	return side;
+	return (sqrt((height * height) + ((topside + bottomside) / 2) * ((topside + bottomside) / 2)));
 }
 
 /// @brief get topside of the object
@@ -190,7 +185,7 @@ float isoTrapezoid::GetHeight() {
 /// @return side 
 float isoTrapezoid::GetSide() {
 
-	return CalculateSide;
+	return CalculateSide();
 }
 
 /// @brief get topside, bottomside and height of the object
@@ -217,7 +212,7 @@ float isoTrapezoid::GetArea() {
 /// @return perimeter of the isotrapezoid
 float isoTrapezoid::GetPerimeter() {
 
-	return (topside + bottomside + 2 * (CalculateSide));
+	return (topside + bottomside + 2 * CalculateSide());
 }
 
 /// @brief write an error message 
@@ -247,9 +242,15 @@ void isoTrapezoid::Dump() {
 	cout << "Topside = " << topside << endl;
 	cout << "Bottomside = " << bottomside << endl;
 	cout << "Height = " << height << endl;
+	cout << "Side = " << GetSide() << endl;
 	cout << "Perimeter = " << GetPerimeter() << endl;
 	cout << "Area = " << GetArea() << endl;
 	cout << endl;
+
+}
+
+void isoTrapezoid::Draw() {
+
 
 }
 
