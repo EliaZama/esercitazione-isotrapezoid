@@ -51,7 +51,6 @@ isoTrapezoid::isoTrapezoid(const isoTrapezoid& r) {
 	cout << "isoTrapezoid - copy constructor" << endl;
 
 	Init(r);
-
 }
 
 /// @brief destructor 
