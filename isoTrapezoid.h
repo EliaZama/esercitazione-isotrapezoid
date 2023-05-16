@@ -10,7 +10,7 @@
 
 using namespace std;
 
-/// @class Rectangle
+/// @class isoTrapezoid
 /// @brief 
 
 class isoTrapezoid
